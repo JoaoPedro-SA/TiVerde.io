@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head>
+    <meta charset="utf-8">
+    <title>Energia não renovavel</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="../style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="../style.responsive.css" media="all">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu|Cantarell&amp;subset=latin">
+
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <script src="../script.responsive.js"></script>
+
+
+
+<script>jQuery(function ($) {
+    'use strict';
+    if ($.fn.themeSlider) {
+        $(".art-slidecontainerdownload3").each(function () {
+            var slideContainer = $(this), tmp;
+            var inner = $(".art-slider-inner", slideContainer);
+            inner.children().filter("script").remove();
+            var helper = null;
+            
+            if ($.support.themeTransition) {
+                helper = new BackgroundHelper();
+                helper.init("vertical", "prev", $(".art-slide-item", inner).first().css($.support.themeTransition.prefix + "transition-duration"));
+                inner.children().each(function () {
+                    helper.processSlide($(this), true);
+                });
+
+                                var initialWidth = slideContainer.attr("data-width");
+                var initialHeight = slideContainer.attr("data-height");
+                helper.updateSize(inner, { width: initialWidth, height: initialHeight });
+                
+                var items = helper.items(helper.current(0), helper.next(0));
+                helper.setBackground(inner, items);
+                helper.setPosition(inner, items);
+
+                slideContainer.on("beforeSlide", function () {
+                    var activeItem = $(".active", this),
+                        nextItem = $(".next, .prev", this),
+                        activePos = $(".art-slide-item", this).index(activeItem),
+                        nextPos = $(".art-slide-item", this).index(nextItem);
+
+                    var currentItems = helper.items(helper.current(activePos), helper.current(nextPos));
+
+                    helper.transition(inner, false);
+                    helper.setBackground(inner, currentItems);
+                    helper.setPosition(inner, currentItems);
+                    if (inner.length) {
+                        tmp = inner.get(0).offsetHeight;
+                    }
+
+                    var movedCurrentItems = helper.items(helper.current(activePos), helper.current(nextPos), true);
+                    helper.transition(inner, true);
+                    helper.setPosition(inner, movedCurrentItems);
+                });
+                
+            } else if (browser.ie && browser.version <= 8) {
+                var slidesInfo = {
+".art-slidedownload30": {
+    "bgimage" : "url('../images/slidedownload30.jpg')",
+    "bgposition": "0 0",
+    "images": "",
+    "positions": ""
+},
+".art-slidedownload31": {
+    "bgimage" : "url('../images/slidedownload31.jpg')",
+    "bgposition": "0 0",
+    "images": "",
+    "positions": ""
+},
+".art-slidedownload32": {
+    "bgimage" : "url('../images/slidedownload32.jpg')",
+    "bgposition": "0 0",
+    "images": "",
+    "positions": ""
+},
+".art-slidedownload33": {
+    "bgimage" : "url('../images/slidedownload33.jpg')",
+    "bgposition": "0 0",
+    "images": "",
+    "positions": ""
+}
+                };
+                $.each(slidesInfo, function(selector, info) {
+                    processElementMultiplyBg(slideContainer.find(selector), info);
+                });
+            }
+
+            inner.children().eq(0).addClass("active");
+            slideContainer.themeSlider({
+                pause: 2600,
+                speed: 600,
+                repeat: true,
+                animation: "vertical",
+                direction: "prev",
+                navigator: slideContainer.siblings(".art-slidenavigatordownload3"),
+                helper: helper
+            });
+            
+                        
+        });
+    }
+});
+</script><style>.art-content .art-postcontent-0 .layout-item-0 { padding-right: 20px;padding-bottom: 20px;padding-left: 20px;  }
+.ie7 .art-post .art-layout-cell {border:none !important; padding:0 !important; }
+.ie6 .art-post .art-layout-cell {border:none !important; padding:0 !important; }
+
+.art-slidecontainerdownload3 {
+    position: relative;
+        width: 481px;
+    height: 481px;
+        }
+
+.default-responsive .art-header .art-slidecontainerdownload3,
+.responsive .art-header .art-slidecontainerdownload3
+{
+  position: absolute !important;
+}
+
+.responsive .art-pageslider .art-slidecontainerdownload3 {
+  position: absolute !important;
+}
+
+.art-slidecontainerdownload3 .art-slide-item
+{
+
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    transform: rotate(0);
+}
+
+
+.art-slidecontainerdownload3 .art-slide-item {
+    -webkit-transition: 600ms ease-in-out top;
+    -moz-transition: 600ms ease-in-out top;
+    -ms-transition: 600ms ease-in-out top;
+    -o-transition: 600ms ease-in-out top;
+    transition: 600ms ease-in-out top;
+    position: relative;
+    display: none;
+    width:  100%;
+    height: 100%;
+}
+
+.art-slidecontainerdownload3 .active, .art-slidecontainerdownload3 .next, .art-slidecontainerdownload3 .prev {
+    display: block;
+}
+
+.art-slidecontainerdownload3 .active {
+    top: 0;
+}
+.ie10 .art-slidecontainerdownload3 .active {
+    top: 0.1px;
+}
+
+.art-slidecontainerdownload3 .next, .art-slidecontainerdownload3 .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.art-slidecontainerdownload3 .next {
+    top: 100%;
+}
+
+.art-slidecontainerdownload3 .prev {
+    top: -100%;
+}
+
+.art-slidecontainerdownload3 .next.forward, .art-slidecontainerdownload3 .prev.back {
+    top: 0;
+}
+.ie10 .art-slidecontainerdownload3 .next.forward, .art-slidecontainerdownload3 .prev.back {
+    top: 0.1px;
+}
+
+.art-slidecontainerdownload3 .active.forward {
+    top: -100%;
+}
+
+.art-slidecontainerdownload3 .active.back {
+    top: 100%;
+}
+
+
+
+.art-slidedownload30 {
+    background-image:  url('../images/slidedownload30.jpg');
+        /* background-size:  auto auto; */
+        background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+/* special setup for header/pageslider */
+.responsive .art-header .art-slidedownload30 {
+    background-image:  url('../images/slidedownload30.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.responsive .art-pageslider .art-slidedownload30 {
+    background-image:  url('../images/slidedownload30.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-header .art-slidedownload30 {
+    background-image: url('../images/slidedownload30.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-pageslider .art-slidedownload30 {
+    background-image: url('../images/slidedownload30.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}.art-slidedownload31 {
+    background-image:  url('../images/slidedownload31.jpg');
+        /* background-size:  auto auto; */
+        background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+/* special setup for header/pageslider */
+.responsive .art-header .art-slidedownload31 {
+    background-image:  url('../images/slidedownload31.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.responsive .art-pageslider .art-slidedownload31 {
+    background-image:  url('../images/slidedownload31.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-header .art-slidedownload31 {
+    background-image: url('../images/slidedownload31.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-pageslider .art-slidedownload31 {
+    background-image: url('../images/slidedownload31.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}.art-slidedownload32 {
+    background-image:  url('../images/slidedownload32.jpg');
+        /* background-size:  auto auto; */
+        background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+/* special setup for header/pageslider */
+.responsive .art-header .art-slidedownload32 {
+    background-image:  url('../images/slidedownload32.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.responsive .art-pageslider .art-slidedownload32 {
+    background-image:  url('../images/slidedownload32.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-header .art-slidedownload32 {
+    background-image: url('../images/slidedownload32.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-pageslider .art-slidedownload32 {
+    background-image: url('../images/slidedownload32.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}.art-slidedownload33 {
+    background-image:  url('../images/slidedownload33.jpg');
+        /* background-size:  auto auto; */
+        background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+/* special setup for header/pageslider */
+.responsive .art-header .art-slidedownload33 {
+    background-image:  url('../images/slidedownload33.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.responsive .art-pageslider .art-slidedownload33 {
+    background-image:  url('../images/slidedownload33.jpg');
+    background-size: auto auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-header .art-slidedownload33 {
+    background-image: url('../images/slidedownload33.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.default-responsive .art-pageslider .art-slidedownload33 {
+    background-image: url('../images/slidedownload33.jpg');
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.art-slidenavigatordownload3 {
+  display: inline-block;
+  position: absolute;
+  direction: ltr !important;
+  top: 454px;
+  left: 0%;
+  z-index: 101;
+  line-height: 0 !important;
+  -webkit-background-origin: border !important;
+  -moz-background-origin: border !important;
+  background-origin: border-box !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+    white-space: nowrap;
+      right: 0px;
+  }
+.art-slidenavigatordownload3
+{
+background: #B5C5C9;background: transparent;
+
+
+
+padding:7px;
+
+
+
+
+
+}
+.art-slidenavigatordownload3 > a
+{
+background: #6B8B94;
+-webkit-border-radius:40%;-moz-border-radius:40%;border-radius:40%;
+
+border:1px solid #839EA5;
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+.art-slidenavigatordownload3 > a.active
+{
+background: #0d0e0e;
+-webkit-border-radius:40%;-moz-border-radius:40%;border-radius:40%;
+
+border:1px solid #0D6378;
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+.art-slidenavigatordownload3 > a:hover
+{
+background: #5B7170;background: -webkit-linear-gradient(top, #6D8887 0, #4B5D5C 100%) no-repeat;background: -moz-linear-gradient(top, #6D8887 0, #4B5D5C 100%) no-repeat;background: -o-linear-gradient(top, #6D8887 0, #4B5D5C 100%) no-repeat;background: -ms-linear-gradient(top, #6D8887 0, #4B5D5C 100%) no-repeat;-svg-background: linear-gradient(top, #6D8887 0, #4B5D5C 100%) no-repeat;background: linear-gradient(to bottom, #6D8887 0, #4B5D5C 100%) no-repeat;
+-webkit-border-radius:40%;-moz-border-radius:40%;border-radius:40%;
+
+border:1px solid #74908E;
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+
+</style></head>
+<body>
+<div id="art-main">
+<header class="art-header">
+
+    <div class="art-shapes">
+        
+            </div>
+
+<h1 class="art-headline">
+    <a href="/">ti verde</a>
+</h1>
+
+
+
+
+
+                
+                    
+</header>
+<nav class="art-nav">
+    <ul class="art-hmenu"><li><a href="../inicio.html" class="">Início</a></li><li><a href="../tiverde.html" class="active">Curiosidades</a><ul class="active"><li><a href="../tiverde/energia-renovavel.html" class="">Energia renovavel</a></li><li><a href="../tiverde/energia-nao-renovavel.html" class="active">Energia não renovavel</a></li><li><a href="../tiverde/os-desafios-planos-e-objetivos.html">Os desafios, planos e objetivos</a></li></ul></li></ul> 
+    </nav>
+<div class="art-sheet clearfix">
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content"><article class="art-post art-article">
+                                <div class="art-postmetadataheader">
+                                        <h2 class="art-postheader">Energia não renovavel</h2>
+                                                            
+                                    </div>
+                                <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout">
+    <div class="art-content-layout-row">
+    <div class="art-layout-cell layout-item-0" style="width: 100%" >
+        <p><span style="color: rgb(55, 65, 81); font-size: 16px; font-weight: 400; text-align: start; white-space: pre-wrap; background-color: rgb(247, 247, 248);"><span style="font-family: Tahoma;">A energia não renovável é obtida a partir de fontes que são finitas e esgotáveis, como o petróleo, o carvão mineral e o gás natural. Esses recursos são resultado de processos geológicos que levaram milhões de anos para se formarem e, uma vez extraídos e utilizados, não podem ser repostos em um curto período de tempo. Além disso, a queima desses combustíveis fósseis para a geração de energia resulta na liberação de grandes quantidades de dióxido de carbono e outros gases poluentes, contribuindo para o aquecimento global e a poluição do ar. A dependência dessas fontes de energia não renováveis representa um desafio para a sustentabilidade e a segurança energética, destacando a importância da transição para fontes de energia mais limpas e renováveis.</span><span style="font-family: Söhne, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"><br></span></span></p><div id="download3" style="position: relative; display: inline-block; z-index: 0; margin: 7px;  border-style: solid; border-color: #ADBDBC; border-width: 1px;  " class="art-collage">
+<div class="art-slider art-slidecontainerdownload3" data-width="481" data-height="481">
+    <div class="art-slider-inner">
+<div class="art-slide-item art-slidedownload30" >
+
+
+</div>
+<div class="art-slide-item art-slidedownload31" >
+
+
+</div>
+<div class="art-slide-item art-slidedownload32" >
+
+
+</div>
+<div class="art-slide-item art-slidedownload33" >
+
+
+</div>
+
+    </div>
+</div>
+<div class="art-slidenavigator art-slidenavigatordownload3" data-left="0" data-top="0.9934354">
+<a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a>
+</div>
+
+
+
+    </div>
+
+        <p><span style="color: rgb(55, 65, 81); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; font-weight: 400; text-align: start; white-space: pre-wrap; background-color: rgb(247, 247, 248);"><br></span><br></p>
+    </div>
+    </div>
+</div>
+</div>
+                                
+                
+
+</article></div>
+                        <div class="art-layout-cell art-sidebar1"><div class="art-vmenublock clearfix">
+        <div class="art-vmenublockheader">
+            <h3 class="t">Vertical Menu</h3>
+        </div>
+        <div class="art-vmenublockcontent">
+<ul class="art-vmenu"><li><a href="../inicio.html" class="">Início</a></li><li><a href="../tiverde.html" class="active">Curiosidades</a><ul class="active"><li><a href="../tiverde/energia-renovavel.html" class="">Energia renovavel</a></li><li><a href="../tiverde/energia-nao-renovavel.html" class="active">Energia não renovavel</a></li><li><a href="../tiverde/os-desafios-planos-e-objetivos.html">Os desafios, planos e objetivos</a></li></ul></li></ul>
+                
+        </div>
+</div></div>
+                    </div>
+                </div>
+            </div><footer class="art-footer">
+<div class="art-content-layout">
+    <div class="art-content-layout-row">
+    <div class="art-layout-cell layout-item-0" style="width: 50%">
+        <p>ETEC de Vila Formosa 2023</p>
+    </div><div class="art-layout-cell layout-item-0" style="width: 50%">
+        <p style="text-align: start;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;3<span style="font-family: 'Google Sans', arial, sans-serif;">º Informática</span></p>
+    </div>
+    </div>
+</div>
+
+</footer>
+
+    </div>
+    <p class="art-page-footer">
+      
+    </p>
+</div>
+
+
+</body></html>
