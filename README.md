@@ -4,9 +4,7 @@ O Projeto foi elaborado para divulgação sobre TiVerde
 
 As tecnologias ultilizadas no projeto foi
 
-JavaScript
-HTML
-CSS
+JavaScript/HTML/CSS
 
 Sé quiser me conhecer so clicar aqui em baixo 👇
 
