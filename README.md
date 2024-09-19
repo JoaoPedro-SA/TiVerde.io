@@ -14,4 +14,4 @@ Sé quiser me conhecer so clicar aqui em baixo 👇
 
 ## link do site do projeto
 
-https://joaopedrosa-cmd.github.io/TiVerde.io/
+https://joaopedro-sa.github.io/TiVerde.io/
